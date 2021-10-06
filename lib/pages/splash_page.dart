@@ -8,7 +8,14 @@ class SplashPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child:Padding(
+      bottom:false,
+      child:Stack(
+        children:[
+          Align(
+            alignment:Alignment.bottomCenter,
+            child:Image.asset('assets/splash_image.png'),
+          ),
+          Padding(
           padding:EdgeInsets.only(
             top:50,
             left: 30
@@ -60,7 +67,7 @@ class SplashPage extends StatelessWidget {
           ),
         )
       ],
-      ))),
+      ))])),
     );
   }
 }
