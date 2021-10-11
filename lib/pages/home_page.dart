@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rifqi_dart_flutter_dev/models/city.dart';
 import 'package:rifqi_dart_flutter_dev/theme.dart';
 import 'package:rifqi_dart_flutter_dev/widgets/city_card.dart';
 
@@ -38,7 +39,21 @@ class HomePage extends StatelessWidget {
                 height: 150,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
-                  children: [CityCard(), CityCard(), CityCard()],
+                  children: [
+                    SizedBox(width: 24),
+                    CityCard(City(
+                        id: 1, name: "Jakarta", imageUrl: 'assets/city1.png')),
+                    SizedBox(width: 20),
+                    CityCard(City(
+                        id: 2,
+                        name: "Bandung",
+                        imageUrl: 'assets/city2.png',
+                        isPopular: true)),
+                    SizedBox(width: 20),
+                    CityCard(City(
+                        id: 3, name: "Surabaya", imageUrl: 'assets/city3.png')),
+                    SizedBox(width: 24),
+                  ],
                 ),
               )
             ],
