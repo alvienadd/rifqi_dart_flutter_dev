@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rifqi_dart_flutter_dev/models/city.dart';
+import 'package:rifqi_dart_flutter_dev/models/space.dart';
 import 'package:rifqi_dart_flutter_dev/theme.dart';
 import 'package:rifqi_dart_flutter_dev/widgets/city_card.dart';
 import 'package:rifqi_dart_flutter_dev/widgets/space_card.dart';
@@ -73,15 +74,45 @@ class HomePage extends StatelessWidget {
               SizedBox(
                 height: 16,
               ),
-              Column(
-                children: [
-                  SpaceCard(),
-                  SizedBox(height: 30),
-                  SpaceCard(),
-                  SizedBox(height: 30),
-                  SpaceCard()
-                ],
-              ),
+
+              Padding(
+                  padding: EdgeInsets.symmetric(horizontal: edge),
+                  child: Column(
+                    children: [
+                      SpaceCard(
+                        Space(
+                            id: 1,
+                            name: 'Kuretakeso Hott',
+                            imageUrl: 'assets/space1.png',
+                            price: 52,
+                            city: 'Bandung',
+                            country: 'Germany',
+                            rating: 4),
+                      ),
+                      SizedBox(height: 30),
+                      SpaceCard(
+                        Space(
+                            id: 2,
+                            name: 'Roemah Nenek',
+                            imageUrl: 'assets/space2.png',
+                            price: 11,
+                            city: 'Seattle',
+                            country: 'Bogor',
+                            rating: 5),
+                      ),
+                      SizedBox(height: 30),
+                      SpaceCard(
+                        Space(
+                            id: 3,
+                            name: 'Darrling How',
+                            imageUrl: 'assets/space3.png',
+                            price: 20,
+                            city: 'Jakarta',
+                            country: 'Indonesia',
+                            rating: 3),
+                      )
+                    ],
+                  )),
             ],
           )),
     ));

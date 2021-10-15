@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:rifqi_dart_flutter_dev/models/space.dart';
 
 import '../theme.dart';
 
 class SpaceCard extends StatelessWidget {
+  final Space space;
+  SpaceCard(this.space);
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -14,7 +18,7 @@ class SpaceCard extends StatelessWidget {
                 height: 110,
                 child: Stack(
                   children: [
-                    Image.asset('assets/space1.png'),
+                    Image.asset(space.imageUrl),
                     Align(
                         alignment: Alignment.topRight,
                         child: Container(
@@ -34,7 +38,7 @@ class SpaceCard extends StatelessWidget {
                                     height: 22,
                                   ),
                                   Text(
-                                    "4/5",
+                                    "${space.rating}/5",
                                     style:
                                         whiteTextStyle.copyWith(fontSize: 13),
                                   )
@@ -46,14 +50,14 @@ class SpaceCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Kuretakeso Hott",
+              space.name,
               style: blackTextStyle.copyWith(fontSize: 18),
             ),
             SizedBox(
               height: 2,
             ),
             Text.rich(TextSpan(
-                text: '\$52',
+                text: '\$${space.price}',
                 style: purpleTextStyle.copyWith(fontSize: 16),
                 children: [
                   TextSpan(
@@ -61,7 +65,7 @@ class SpaceCard extends StatelessWidget {
                       style: greyTextStyle.copyWith(fontSize: 16))
                 ])),
             SizedBox(height: 16),
-            Text("Bandung, Germany", style: greyTextStyle)
+            Text("${space.city}, ${space.country}", style: greyTextStyle)
           ],
         ),
       ],
