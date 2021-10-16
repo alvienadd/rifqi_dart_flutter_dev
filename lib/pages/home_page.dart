@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rifqi_dart_flutter_dev/models/city.dart';
 import 'package:rifqi_dart_flutter_dev/models/space.dart';
+import 'package:rifqi_dart_flutter_dev/models/tips.dart';
 import 'package:rifqi_dart_flutter_dev/theme.dart';
 import 'package:rifqi_dart_flutter_dev/widgets/city_card.dart';
 import 'package:rifqi_dart_flutter_dev/widgets/space_card.dart';
@@ -126,7 +127,19 @@ class HomePage extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: edge),
                 child: Column(
-                  children: [TipsCard(), SizedBox(height: 20), TipsCard()],
+                  children: [
+                    TipsCard(Tips(
+                        id: 1,
+                        title: 'City Guidelines',
+                        imageUrl: "assets/tips1.png",
+                        updatedAt: "20 Apr")),
+                    SizedBox(height: 20),
+                    TipsCard(Tips(
+                        id: 2,
+                        title: 'Jakarta Fairship',
+                        imageUrl: "assets/tips2.png",
+                        updatedAt: "11 Dec"))
+                  ],
                 ),
               ),
             ],
