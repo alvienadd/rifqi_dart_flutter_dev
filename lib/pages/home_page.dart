@@ -4,6 +4,7 @@ import 'package:rifqi_dart_flutter_dev/models/space.dart';
 import 'package:rifqi_dart_flutter_dev/theme.dart';
 import 'package:rifqi_dart_flutter_dev/widgets/city_card.dart';
 import 'package:rifqi_dart_flutter_dev/widgets/space_card.dart';
+import 'package:rifqi_dart_flutter_dev/widgets/tips_card.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -113,6 +114,21 @@ class HomePage extends StatelessWidget {
                       )
                     ],
                   )),
+              SizedBox(height: 30),
+              //NOTE:Tips & Guidance
+              Padding(
+                  padding: EdgeInsets.only(left: 24),
+                  child: Text(
+                    'Tips & Guidance',
+                    style: regularTextStyle.copyWith(fontSize: 16),
+                  )),
+              SizedBox(height: 16),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: edge),
+                child: Column(
+                  children: [TipsCard(), SizedBox(height: 20), TipsCard()],
+                ),
+              ),
             ],
           )),
     ));
